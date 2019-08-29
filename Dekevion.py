@@ -10,11 +10,15 @@
 # Let them select an option to list all of their tasks, add a task to their list, delete a task, or quit the program.
 # Make each option a different function in your program.
 # Do <strong>NOT</strong> use Google. Do <strong>NOT</strong> use other students. Try to do this on your own.
- # What do we need
+ #Extra Credit. Save the user's list in a text file. When the program is run again,
+# input that text file so their task list is not lost.
 
-
+import pickle
 
 taskList=["sweep the floor","clean the bathroom","do the laundry","cut the grass"]
+filename = 'file.txt'
+with open('file.txt') as f:
+    content = f.readlines()
 
 def listAlltasksfunc():
     for i in taskList:
@@ -37,8 +41,13 @@ while menu != 4:
         listAlltasksfunc()
 
     if menu == 2:
+
         taskNew= input('Add to the task list here:   ')
+        f = open("file.txt","a",)
+        f.write(taskNew)
+        f.close()
         addToList(taskNew)
+
     if menu == 3:
         removeTask=input('what task would you like to delete ?  ')
         deleteTask(removeTask)
