@@ -1,18 +1,27 @@
-
+## Create a new task List
 taskList=["sweep the floor","clean the bathroom","do the laundry","cut the grass"]
+##########################################################
+# Function to print the new list to console and to the text file
 
 def listAlltasksfunc():
+    f = open("file.txt","a")
+    f.write('\nThis is the new list\n')
     for i in taskList:
-        f = open("file.txt","w")
         f.write(i)
-
+        f.write('\n')
         print(i)
+#######################################################
+# Function to ask user for new task and add to the list
 def addToList(newtask):
     taskList.append(newtask)
+#######################################################
+# Function to ask user to remove task from the list
+
 def deleteTask(taskTodelete):
     taskList.remove(taskTodelete)
 
-
+#####################################################
+# Menu
 menu = -1
 while menu != 4:
     menu = int(input('What would you like to do next \n'
@@ -26,9 +35,11 @@ while menu != 4:
 
     if menu == 2:
         taskNew= input('Add to the task list here:   ')
-        f = open("file.txt","w")
-        f.write(taskNew)
-        f.close()
+        # f = open("file.txt","a")
+        # f.write('\nThe New Task is : ')
+        # f.write(taskNew)
+        # f.write('\n')
+        # f.close()
         addToList(taskNew)
     if menu == 3:
         removeTask= input('what task would you like to delete ?  ')
