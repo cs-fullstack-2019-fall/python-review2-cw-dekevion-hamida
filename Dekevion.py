@@ -13,20 +13,17 @@
  #Extra Credit. Save the user's list in a text file. When the program is run again,
 # input that text file so their task list is not lost.
 
-import pickle
+
 
 taskList=["sweep the floor","clean the bathroom","do the laundry","cut the grass"]
-filename = 'file.txt'
-with open('file.txt') as f:
-    content = f.readlines()
 
 def listAlltasksfunc():
     for i in taskList:
         print(i)
 def addToList(newtask):
-    taskList.append(newtask)
+    taskList.append(newtask) # add newtask to tasklist
 def deleteTask(taskTodelete):
-    taskList.remove(taskTodelete)
+    taskList.remove(taskTodelete) # remove instead of pop
 
 
 menu = -1
@@ -41,14 +38,11 @@ while menu != 4:
         listAlltasksfunc()
 
     if menu == 2:
-
         taskNew= input('Add to the task list here:   ')
-        f = open("file.txt","a",)
-        f.write(taskNew)
+        f = open("file.txt","a") # opens file > file name> a for append
+        f.write(taskNew) # writes file
         f.close()
-        addToList(taskNew)
-
+        addToList(taskNew) # adds to task to original list
     if menu == 3:
         removeTask=input('what task would you like to delete ?  ')
         deleteTask(removeTask)
-
