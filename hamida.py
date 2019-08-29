@@ -7,7 +7,7 @@ def listAlltasksfunc():
 def addToList(newtask):
     taskList.append(newtask)
 def deleteTask(taskTodelete):
-    taskList.pop(taskTodelete)
+    taskList.remove(taskTodelete)
 
 
 menu = -1
@@ -25,6 +25,6 @@ while menu != 4:
         taskNew= input('Add to the task list here:   ')
         addToList(taskNew)
     if menu == 3:
-        removeTask=input('what task would you like to delete ?  ')
+        removeTask= input('what task would you like to delete ?  ')
         deleteTask(removeTask)
 
