@@ -1,5 +1,5 @@
+Great work y'all! Next time consider breaking up the tasks and working in seperate files then calling functions in a main file. Score : 5
 # python-review2-cw
-
    Create a task list. A user is presented with the text below.
    Let them select an option to list all of their tasks,
   add a task to their list, delete a task, or quit the program.
